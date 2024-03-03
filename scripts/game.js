@@ -1,4 +1,4 @@
-const words = ['NUMBERS', 'CARS', 'BICYCLE', 'CHOCOLATE', 'MOUNTAIN', 'HANADY']
+const words = ['NUMBERS', 'CARS', 'BICYCLE', 'CHOCOLATE', 'MOUNTAIN', 'BOTTLE']
 const randomWord = words[Math.floor(Math.random() * words.length)]; 
 
 const wordLength = randomWord.length
@@ -36,36 +36,35 @@ function checkLetter(letter){
 
     for (let i = 0; i < randomWord.length; i++){
         if (randomWord[i] == letter) {
-            lettersIndices.push(i+1)   
-            console.log(lettersIndices) 
+            lettersIndices.push(i+1); 
         } 
     }
 
     if (lettersIndices.length == 0){
         if (errorInputs.length == 0){
             head()
-            errorInputs.push('Head')
+            errorInputs.push('Head');
         }
         else if (errorInputs.length == 1){
             body()
-            errorInputs.push('Body')
+            errorInputs.push('Body');
         }
         else if (errorInputs.length == 2){
             leftHand()
-            errorInputs.push('Left Hand')
+            errorInputs.push('Left Hand');
         }
         else if (errorInputs.length == 3){
             rightHand()
-            errorInputs.push('Right Hand')
+            errorInputs.push('Right Hand');
         }
         else if (errorInputs.length == 4){
             leftLeg()
-            errorInputs.push('Left Leg')
+            errorInputs.push('Left Leg');
         }
         else if (errorInputs.length == 5){
             rightLeg()
             errorInputs.push('Right Leg')
-            alert('Oh oh! You lost the game')
+            alert('Oh oh! You lost the game');
         }
 
     }
