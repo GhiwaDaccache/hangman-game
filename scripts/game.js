@@ -1,4 +1,4 @@
-const words = ['numbers', 'cars', 'bicycle', 'chocolate', 'mountain', 'hanady']
+const words = ['NUMBERS', 'CARS', 'BICYCLE', 'CHOCOLATE', 'MOUNTAIN', 'HANADY']
 const randomWord = words[Math.floor(Math.random() * words.length)]; 
 
 const wordLength = randomWord.length
@@ -6,7 +6,21 @@ const answerSection = document.getElementById('answer-section')
 
 let errorInputs = []
 
+const buttons = document.querySelectorAll('.letter')
+
+function clickLetters(){
+    for (let i=0; i < buttons.length; i++){
+        const button = buttons[i];
+        button.addEventListener("click", function () {
+            const letter = button.innerHTML;
+            checkLetter(letter);
+        });
+    }
+}
+clickLetters()
+
 console.log(randomWord)
+
 function fillAnswerSection(wordLength){
     answerSection.innerHTML = "";
     for (let i = 0; i < wordLength; i++) {
@@ -15,12 +29,15 @@ function fillAnswerSection(wordLength){
 }
 fillAnswerSection(wordLength)
 
+
 function checkLetter(letter){
     let lettersIndices = []
-    
+    console.log(letter)
+
     for (let i = 0; i < randomWord.length; i++){
         if (randomWord[i] == letter) {
-            lettersIndices.push(i+1)    
+            lettersIndices.push(i+1)   
+            console.log(lettersIndices) 
         } 
     }
 
@@ -58,8 +75,7 @@ function checkLetter(letter){
     }
 }
 
-    
 
 
 
-checkLetter('a')
+
