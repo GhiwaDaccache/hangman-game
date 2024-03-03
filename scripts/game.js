@@ -8,8 +8,8 @@ console.log(randomWord)
 function fillAnswerSection(wordLength){
     answerSection.innerHTML = "";
     for (let i = 0; i < wordLength; i++) {
-        answerSection.innerHTML = "<span>_</span>";
+        answerSection.innerHTML += "<span>_</span>";
       }
 }
-
 fillAnswerSection(wordLength)
+
