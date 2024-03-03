@@ -16,8 +16,7 @@ fillAnswerSection(wordLength)
 function checkLetter(letter){
     if (randomWord.indexOf(letter) != -1) {
         const letterIndex = randomWord.indexOf(letter)+1;
-        console.log(letterIndex)
-        const spanIndex = document.querySelector('#answer-section :nth-child('+ letterIndex +')').innerHTML = ('+ letter +');
+        document.querySelector('#answer-section :nth-child('+ letterIndex +')').innerHTML = letter ;
         
     } else {
         console.log("The word Example is not in the string.");
