@@ -1,4 +1,4 @@
-const words = ['numbers', 'cars', 'bicycle', 'chocolate', 'mountain']
+const words = ['numbers', 'cars', 'bicycle', 'chocolate', 'mountain', 'hanady']
 const randomWord = words[Math.floor(Math.random() * words.length)]; 
 
 const wordLength = randomWord.length
@@ -14,12 +14,16 @@ function fillAnswerSection(wordLength){
 fillAnswerSection(wordLength)
 
 function checkLetter(letter){
-    if (randomWord.indexOf(letter) != -1) {
-        const letterIndex = randomWord.indexOf(letter)+1;
-        document.querySelector('#answer-section :nth-child('+ letterIndex +')').innerHTML = letter ;
-        
-    } else {
-        console.log("The word Example is not in the string.");
+    let lettersIndices = []
+    for (let i = 0; i < randomWord.length; i++){
+        if (randomWord[i] == letter) {
+            lettersIndices.push(i)    
+        } 
+        else {
+            console.log("The word Example is not in the string.");
+        }
     }
 }
+
+
 checkLetter('a')
